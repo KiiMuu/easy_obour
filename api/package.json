@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Easy Obour API",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "frontend": "npm start --prefix ../frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "author": "Mohamad Ghareep",
   "license": "ISC",
@@ -13,9 +17,12 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "actions-on-google": "^2.14.0",
     "dialogflow": "^1.2.0",
+    "dialogflow-fulfillment": "^0.6.1",
     "dotenv": "^9.0.0",
     "express": "^4.17.1",
+    "mongoose": "^5.12.7",
     "morgan": "^1.10.0"
   }
 }
