@@ -3,7 +3,7 @@ config();
 import express from 'express';
 import morgan from 'morgan';
 import * as keys from './config/dev.js';
-// import cors from 'cors';
+import connectDB from './config/db.js';
 
 // * app
 const app = express();
@@ -12,6 +12,7 @@ const app = express();
 import dialogflowRoutes from './routes/dialogflow.js';
 
 // * db connection
+connectDB();
 
 // * middlewares
 app.use(express.json());

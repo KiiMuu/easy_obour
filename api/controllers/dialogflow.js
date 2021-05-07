@@ -1,4 +1,5 @@
 import dialogflow from 'dialogflow';
+import Registeration from '../models/Registeration.js';
 import { 
     dialogFlowSessionId, 
     dialogFlowSessionLanguageCode, 
@@ -23,10 +24,18 @@ const textQuery = async (req, res) => {
     };
     
     const responses = await sessionClient.detectIntent(request);
-    console.log('Detected intent');
+
     const result = responses[0].queryResult;
-    console.log(`  Query: ${result.queryText}`);
-    console.log(`  Response: ${result.fulfillmentText}`);
+
+    if (result.intent.displayName === 'Register User') {
+        if (result.allRequiredParamsPresent) {
+            await new Registeration({
+                name: result.parameters.fields.name?.stringValue,
+                email: result.parameters.fields.email?.stringValue,
+                location: result.parameters.fields.location?.structValue.fields.city.stringValue,
+            }).save();
+        }
+    }
     
     res.json(result);
 }
