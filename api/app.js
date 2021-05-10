@@ -10,6 +10,7 @@ const app = express();
 
 // * get routes
 import dialogflowRoutes from './routes/dialogflow.js';
+import userRoutes from './routes/user.js';
 
 // * db connection
 connectDB();
@@ -21,6 +22,7 @@ app.use(morgan('dev'));
 
 // * use routes
 app.use('/api', dialogflowRoutes);
+app.use('/api', userRoutes);
 
 // * app listening
 const port = process.env.PORT || 5000;

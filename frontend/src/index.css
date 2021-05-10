@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -14,4 +14,103 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: #666;
     border-radius: .5rem;
+}
+
+/* home */
+.homePage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homePage h1 {
+    font-size: 70px;
+    font-weight: 900;
+    color: #000;
+    background-image: linear-gradient(
+        to right, 
+        #198754, 
+        #08ffc8
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.homePage p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* find places */
+.placesPage {
+    padding-top: 100px;
+}
+
+.place {
+    background: linear-gradient(45deg, rgba(0 0 0 / 4%), transparent);
+    padding: 20px;
+    box-shadow: 0 0 4px 1px rgb(0 0 0 / 6%);
+}
+
+/* auth */
+.loginPage,
+.registerPage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPage .formContainer,
+.registerPage .formContainer {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 1px rgb(0 0 0 / 15%);
+}
+
+.loginPage h3,
+.registerPage h3 {
+    font-weight: 900;
+    color: #000;
+}
+
+.loginPage .formContent,
+.registerPage .formContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginPage input,
+.registerPage input {
+    margin-bottom: 10px;
+    outline: none;
+    height: 45px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+}
+
+.loginPage .authAction,
+.registerPage .authAction {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.loginPage .authAction button,
+.registerPage .authAction button {
+    outline: none;
+    border: none;
+    background: #198754;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+
+.loginPage .authAction a,
+.registerPage .authAction a {
+    text-decoration: none;
 }

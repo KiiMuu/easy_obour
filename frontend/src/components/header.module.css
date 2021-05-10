@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0 0 0 / 10%);
+    z-index: 100;
+}
+
+.header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 65px;
+}
+
+.brand h3 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.brand h3 a {
+    text-decoration: none;
+    color: #000;
+}
+
+.listItems {
+    display: flex;
+    margin: 0;
+    list-style: none;
+}
+
+.listItems li:not(:first-child) {
+    margin-left: 20px;
+}
+
+.listItems li a {
+    text-decoration: none;
+    color: #000;
+}
